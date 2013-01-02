@@ -6,6 +6,8 @@ html{
   -o-background-size: cover;
   background-size: cover;
   padding: 0;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 body {
@@ -80,5 +82,3 @@ $gray-light: #ccc;
   font-family: 'Great Vibes', cursive;
   font-weight: bold;
 }
-
-

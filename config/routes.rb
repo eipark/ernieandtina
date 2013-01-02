@@ -1,6 +1,12 @@
 Ernieandtina::Application.routes.draw do
-  get "static_pages/home"
-
+  root :to => "application#home"
+  match 'story' => "application#story"
+  match 'guestbook' => "application#guestbook"
+  match 'rsvp' => "application#rsvp"
+  match 'photos' => "application#photos"
+  match 'logistics' => "application#logistics"
+  match 'venue' => "application#venue"
+  match 'registry' => "application#registry"
   resources :users
 
 

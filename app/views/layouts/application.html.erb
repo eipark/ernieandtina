@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ernieandtina</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= @title %> | Ernie and Tina's Wedding Site</title>
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <% if false %>
+  <div id="nav">
+    <%= link_to 'Home', root_path %>|
+    <%= link_to 'Our Story', story_path %>|
+    <%= link_to 'Guestbook', guestbook_path %>|
+    <%= link_to 'Registry', registry_path %>|
+    <%= link_to 'RSVP', rsvp_path %>|
+    <%= link_to 'Photos', photos_path %>|
+    <%= link_to 'Venue', venue_path %>|
+    <%= link_to 'Transportation & Lodging', logistics_path %>
+  </div>
+  <% end %>
+  <%= yield %>
+  </body>
 </html>

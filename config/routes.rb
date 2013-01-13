@@ -7,6 +7,8 @@ Ernieandtina::Application.routes.draw do
   match 'logistics' => "application#logistics"
   match 'venue' => "application#venue"
   match 'registry' => "application#registry"
+  match 'address' => redirect("https://docs.google.com/spreadsheet/embeddedform?formkey=dDlva1B0RmlsNzJrODFuZG53M2FrMEE6MQ")
+  match 'savethedate' => "savethedate.html"
   resources :users
 
 

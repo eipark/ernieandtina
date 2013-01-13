@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save the Date | Ernie & Tina</title>
+    <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <style type="text/css">
+
+
+      .cursive {
+        font-family: 'Parisienne', cursive;
+        font-weight: bold;
+      }
+
+      body {
+        text-align: center;
+        padding: 0;
+        padding-top: 130px;
+        background: #000;
+        color: #FFF;
+      }
+
+      img.save-the-date{
+        box-shadow:
+          inset 0 0 50px #000,
+              inset 0 0 50px #000,
+              inset 0 0 50px #000;
+        margin-right: 10px;
+        width: 350px;
+        cursor: pointer;
+      }
+
+      #images {
+        margin: 0  auto;
+        margin-bottom: 35px;
+        width: 1090px;
+        font-family: Helvetica;
+        text-align:center;
+      }
+
+      a {
+        color: #FFF;
+
+      }
+
+      #instructions{
+        color: #333;
+        font-size: 12px;
+        text-align:right;
+      }
+
+      #address {
+        font-size: 16px;
+        color: #BBB;
+        font-family: 'Georgia';
+      }
+
+      #info {
+        font-size: 34px;
+      }
+
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      var image_base = '/assets/savethedate/savethedate-';
+      var image_map = {};
+      image_map["left"] = ["0", "4", "5", "6"];
+      image_map["center"] = ["3", "13", "8", "9"];
+      image_map["right"] = ["2", "10", "11", "12"];
+      var pointer = {};
+      pointer["left"] = 0;
+      pointer["center"] = 0;
+      pointer["right"] = 0;
+      $("img").click(function(){
+        id = $(this).attr('id');
+        pointer[id] = (pointer[id] + 1) % 4;
+        $(this).attr('src', image_base + image_map[id][pointer[id]] + '.jpg');
+      });
+    });
+
+
+    </script>
+  </head>
+  <body>
+    <div id="images">
+      <img title="Save the Date" id="left" class="save-the-date" src="/assets/savethedate/savethedate-0.jpg">
+      <img title="We're getting married!" id="center" class="save-the-date" src="/assets/savethedate/savethedate-3.jpg">
+      <img title="7.20.13" id="right" class="save-the-date" src="/assets/savethedate/savethedate-2.jpg">
+    <div id="instructions">
+      Try clicking the images...
+    </div>
+    </div>
+    <div id="info" class="cursive">
+      July 20, 2013 at the
+      <a href="http://fullercraft.org/">Fuller Craft Museum</a><br /><br />
+    </div>
+    <div id="address">
+      Please <a target="_blank" href="/address">leave us your address</a> for an invitation to follow.
+    </div>
+  </body>
+</html>
+

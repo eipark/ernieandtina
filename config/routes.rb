@@ -1,6 +1,10 @@
 Ernieandtina::Application.routes.draw do
+  resources :guests
+
+
   #root :to => "application#home"
   root :to => redirect("/savethedate")
+  match 'home' => "application#home"
   match 'story' => "application#story"
   match 'guestbook' => "application#guestbook"
   match 'rsvp' => "application#rsvp"

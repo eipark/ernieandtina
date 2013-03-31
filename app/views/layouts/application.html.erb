@@ -8,6 +8,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <div id="content">
+    <%= yield %>
+  </div>
   <div id="nav">
     <%= link_to 'Home', root_path %>|
     <%= link_to 'Our Story', story_path %>|
@@ -15,9 +18,7 @@
     <%= link_to 'Registry', registry_path %>|
     <%= link_to 'RSVP', rsvp_path %>|
     <%= link_to 'Photos', photos_path %>|
-    <%= link_to 'Venue', venue_path %>|
-    <%= link_to 'Transportation & Lodging', logistics_path %>
+    <%= link_to 'Venue & Transportation', venue_path %>
   </div>
-  <%= yield %>
   </body>
 </html>

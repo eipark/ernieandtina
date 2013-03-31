@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def registry
-    @title = 'Logistics'
+    @title = 'Registry'
   end
 
   def logistics

@@ -1,3 +1,8 @@
-RSVP
-<%= form_for(@guest) do |f| %>
+<h1>RSVP</h1>
+Please enter the 5 character code on the back of your invitation.
+<%= flash[:error] %>
+<%= flash[:notice] %>
+<%= form_tag("/rsvp/respond", :method => :get) do  %>
+  <%= text_field_tag "rsvp_code", nil, :size=>5 %>
+  <%= submit_tag "Continue" %>
 <% end %>

@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
     @title = 'Venue'
   end
 
-  def rsvp
-    @title = 'RSVP'
-  end
-
   def story
     @title = 'Our Story'
   end

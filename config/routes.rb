@@ -1,4 +1,7 @@
 Ernieandtina::Application.routes.draw do
+  get "rsvp/respond"
+  get "rsvp/complete"
+
   resources :guests
 
 
@@ -7,7 +10,7 @@ Ernieandtina::Application.routes.draw do
   match 'home' => "application#home"
   match 'story' => "application#story"
   match 'guestbook' => "application#guestbook"
-  match 'rsvp' => "application#rsvp"
+  match 'rsvp' => "rsvp#rsvp"
   match 'photos' => "application#photos"
   match 'logistics' => "application#logistics"
   match 'venue' => "application#venue"

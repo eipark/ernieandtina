@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224235208) do
+ActiveRecord::Schema.define(:version => 20130331222907) do
 
   create_table "guests", :force => true do |t|
     t.string   "first_name"
@@ -25,5 +25,7 @@ ActiveRecord::Schema.define(:version => 20130224235208) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "guests", ["rsvp_code"], :name => "index_guests_on_rsvp_code", :unique => true
 
 end

@@ -2,14 +2,14 @@ Ernieandtina::Application.routes.draw do
   get "rsvp/respond"
   get "rsvp/complete"
 
-  resources :guests
+#  resources :guests
 
 
   #root :to => "application#home"
   root :to => redirect("/savethedate")
   match 'home' => "application#home"
   match 'story' => "application#story"
-  match 'guestbook' => "application#guestbook"
+  match 'guestbook' => "guests#guestbook"
   match 'rsvp' => "rsvp#rsvp"
   match 'photos' => "application#photos"
   match 'logistics' => "application#logistics"

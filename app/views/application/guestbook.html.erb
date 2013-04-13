@@ -1,0 +1,5 @@
+<% @comments.each do |comment| %>
+  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
+  <em><%= comment[:comment] %></em><br />
+
+<% end %>

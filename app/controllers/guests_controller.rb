@@ -10,6 +10,12 @@ class GuestsController < ApplicationController
     end
   end
 
+  def guestbook
+    @comments = Guest.pluck(:comment)
+    @comments = Guest.select([:first_name, :last_name, :comment]).map {|e| {first_name: e.first_name, last_name: e.last_name, comment: e.comment}}
+
+  end
+
   # GET /guests/1
   # GET /guests/1.json
   def show

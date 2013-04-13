@@ -11,7 +11,7 @@ Ernieandtina::Application.routes.draw do
   match 'story' => "application#story"
   match 'guestbook' => "guests#guestbook"
   match 'rsvp' => "rsvp#rsvp"
-  match 'photos' => "application#photos"
+  match 'photos' => redirect("https://www.facebook.com/media/set/?set=a.4893203731568.1073741825.1342020184&type=1&l=1d43ebb0f9"), :as => :photos
   match 'logistics' => "application#logistics"
   match 'venue' => "application#venue"
   match 'registry' => "application#registry"

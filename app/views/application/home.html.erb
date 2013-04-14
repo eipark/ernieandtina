@@ -1,4 +1,10 @@
-July 20, 2013<br />
+<div id="intro">
+  Ernie & Tina<br />
+  5pm, July 20, 2013<br />
+  Fuller Craft Museum
+  <div id="countdown"></div>
+</div>
+
 <script type="text/javascript">
 $(document).ready(function() {
   var weddingDate = new Date(2013, 6, 21);
@@ -6,8 +12,7 @@ $(document).ready(function() {
   });
 </script>
 
-<div id="countdown" style="height: 30px;width:200px;"></div>
 <%= javascript_include_tag "jquery.countdown.min" %>
 Welcome!
-We're so excited to spend our wedding day with you. Please make sure to RSVP and sign the guestbook. If you have any questions feel free to email both of us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
+We're so excited to spend our wedding day with you. Please make sure to <%= link_to 'RSVP', rsvp_path %> by <strong>June 9</strong>. If you have any questions feel free to email both of us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
 

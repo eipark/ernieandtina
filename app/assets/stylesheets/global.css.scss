@@ -24,6 +24,13 @@ body {
   margin: 0;
 }
 
+#intro {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 $gray-dark: #333;
 $gray-light: #ccc;
 
@@ -71,7 +78,7 @@ $gray-light: #ccc;
   background: #CCC;
   background: rgba(255, 218, 185, 0.9);
   border: 1px solid #FFBC80;
-  padding: 10px;
+  padding: 20px 10px 40px 10px;
   width: 500px;
   position: absolute;
   left: 50px;
@@ -89,5 +96,11 @@ img#amazon {
 /***** GUESTBOOK ******/
 .entry {
   margin: 13px 0;
+}
+
+.rsvp_textarea {
+  margin-top: 15px;
+  width: 450px;
+  height: 60px;
 }
 

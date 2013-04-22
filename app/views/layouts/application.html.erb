@@ -23,8 +23,14 @@
       <%= link_to 'Photos', photos_path, target: "_blank" %>|
       <%= link_to 'Venue & Transportation', venue_path %>
     </div>
-    <div id="content">
-      <%= yield %>
+
+    <div id="content-container">
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="content-spacer">
+      </div>
     </div>
+
   </body>
 </html>

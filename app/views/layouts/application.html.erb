@@ -5,15 +5,21 @@
     <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <% filename = controller.controller_name %>
+    <% if Rails.application.assets.find_asset filename + ".css"  %>
+      <%= stylesheet_link_tag "#{filename}" %>
+      <%= javascript_include_tag "#{filename}" %>
+    <% end %>
+
+    <%= yield(:header) %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <div id="nav">
       <%= link_to 'Home', home_path %>|
-      <%= link_to 'Our Story', story_path %>|
+      <%= link_to 'RSVP', rsvp_path %>|
       <%= link_to 'Guestbook', guestbook_path %>|
       <%= link_to 'Registry', registry_path %>|
-      <%= link_to 'RSVP', rsvp_path %>|
       <%= link_to 'Photos', photos_path, target: "_blank" %>|
       <%= link_to 'Venue & Transportation', venue_path %>
     </div>

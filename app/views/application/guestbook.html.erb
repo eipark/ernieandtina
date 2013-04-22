@@ -5,39 +5,7 @@
 <h1>Guestbook</h1>
 <% @comments.each do |comment| %>
   <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
-  </div>
-  <div class="entry">
-  <strong><%= comment[:first_name] + " " + comment[:last_name][0] + "." %></strong><br />
-  <em><%= comment[:comment] %></em><br />
+    <div class="from"><%= comment[:from] %></div>
+    <%= comment[:comment] %>
   </div>
 <% end %>

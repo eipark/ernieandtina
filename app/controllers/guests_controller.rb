@@ -11,8 +11,21 @@ class GuestsController < ApplicationController
   end
 
   def guestbook
-    @comments = Guest.pluck(:comment)
-    @comments = Guest.select([:first_name, :last_name, :comment]).map {|e| {first_name: e.first_name, last_name: e.last_name, comment: e.comment}}
+    @comments = []
+    Guest.all.each do |g|
+      if !g.comment.blank?
+        comment = {}
+        comment[:comment] = g.comment
+        from = g.first_name + " " + g.last_name[0]
+        if g.plus_one != nil
+          plus_one = Guest.find_by_id(g.plus_one)
+          plus_one_from = " and " + plus_one.first_name + " " + plus_one.last_name[0]
+          from += plus_one_from
+        end
+        comment[:from] = from
+        @comments.push(comment)
+      end
+    end
 
   end
 end

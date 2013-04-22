@@ -10,3 +10,33 @@ html {
   background: url('/assets/bg-steps.jpg') no-repeat left center fixed;
   background-size: cover;
 }
+
+.rsvp_textarea {
+  margin-top: 5px;
+  width: 450px;
+  height: 40px;
+  margin-bottom: 15px;
+
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+}
+
+.rsvp-radios {
+  margin-bottom: 20px;
+}
+
+.light-divider {
+  border-bottom: 1px solid #ccc;
+  height: 1px;
+  width: 100%;
+}
+
+form#rsvp-form {
+  margin-top: 35px;
+  padding: 10px;
+}
+
+

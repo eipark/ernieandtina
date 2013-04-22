@@ -1,17 +1,42 @@
 <h1>RSVP</h1>
-Hi <strong><%= @guest.first_name %></strong>! Please RSVP below by <strong>June 9</strong>. If you have any questions email us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
-<br />
-<br />
+<p>
+  Hi <strong><%= @guest.first_name %></strong>! Please RSVP below by <strong>June 9</strong>. If you have any questions email us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
+</p>
 
 <%= flash[:error] %>
 <%= flash[:notice] %>
-<%= form_tag("/rsvp/complete", :method => :get) do  %>
+<%= form_tag("/rsvp/complete", :id => "rsvp-form") do  %>
   <%= hidden_field_tag(:rsvp_code, @guest.rsvp_code) %>
-  <%= radio_button_tag(:attending, "yes") %>
-  <%= label_tag(:attending_yes, "Yes, I will attend the wedding") %><br />
-  <%= radio_button_tag(:attending, "no") %>
-  <%= label_tag(:attending_no, "No, I cannot attend the wedding :(") %>
-  <%= text_area_tag(:song_suggest, "Song suggestions?", :class => 'rsvp_textarea' )%>
-  <%= text_area_tag(:comment, "Leave us a comment for the guestbook! It will be visible to everyone else.", :class => 'rsvp_textarea' )%>
+  <div class="rsvp-radios">
+    <div>
+      <%= radio_button_tag(:attending, "yes", true) %>
+      <%= label_tag(:attending_yes, "<strong>Yes</strong>, I will attend the wedding".html_safe) %>
+    </div>
+    <div>
+      <%= radio_button_tag(:attending, "no") %>
+      <%= label_tag(:attending_no, "<strong>No</strong>, I cannot attend the wedding :(".html_safe) %>
+    </div>
+  </div>
+  <div>
+    <%= label_tag(:song_suggestion, "Song suggestions?", :class => 'label') %>
+    <%= text_area_tag(:song_suggestion, @guest.song_suggestion, :class => 'rsvp_textarea' )%>
+    <%= label_tag(:comment, "Leave a comment for the guestbook! It will be visible to everyone.", :class => 'label') %>
+    <%= text_area_tag(:comment, @guest.comment, :class => 'rsvp_textarea' )%>
+
+    <div class="rsvp-radios">
+      <div class="label">Dinner Entree Options</div>
+      <div>
+        <%= radio_button_tag(:food_choice, "chicken", true) %>
+        <%= label_tag(:food_choice_chicken, "Chicken Marsala") %>
+      </div>
+      <div>
+        <%= radio_button_tag(:food_choice, "beef") %>
+        <%= label_tag(:food_choice_beef, "Roast Sirloin of Beef") %>
+      </div>
+    </div>
+  </div>
+    <%= label_tag(:allergies, "Dietary restrictions?", :class => 'label') %>
+    <%= text_area_tag(:allergies, @guest.allergies, :class => 'rsvp_textarea' )%>
+
   <%= submit_tag "RSVP" %>
 <% end %>

@@ -24,6 +24,12 @@ body {
   margin: 0;
 }
 
+$red: red;
+
+.error {
+  color: $red;
+}
+
 #intro {
   text-align: center;
   margin-bottom: 15px;
@@ -97,11 +103,5 @@ img#amazon {
 /***** GUESTBOOK ******/
 .entry {
   margin: 13px 0;
-}
-
-.rsvp_textarea {
-  margin-top: 15px;
-  width: 450px;
-  height: 60px;
 }
 

@@ -7,8 +7,11 @@ class RsvpController < ApplicationController
     @rsvp_code = params[:rsvp_code]
 
     @guest = Guest.find_by_rsvp_code(@rsvp_code)
-    if !@guest
-      flash[:error] = "Bad code"
+
+    if @guest
+      render :template => 'rsvp/respond'
+    else
+      flash[:error] = "Incorrect RSVP Code. Try again."
       redirect_to :back
     end
 
@@ -35,9 +38,12 @@ class RsvpController < ApplicationController
 
     @guest.rsvp = @attending
     @guest.comment = params[:comment]
+    @guest.song_suggestion = params[:song_suggestion]
+    @guest.allergies = params[:allergies]
 
-    puts @guest.rsvp
     @guest.save
+
+    render :template => 'rsvp/complete'
   end
 
 end

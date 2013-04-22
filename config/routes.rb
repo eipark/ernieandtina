@@ -1,6 +1,6 @@
 Ernieandtina::Application.routes.draw do
-  get "rsvp/respond"
-  get "rsvp/complete"
+  post "rsvp/respond"
+  post "rsvp/complete"
 
 #  resources :guests
 

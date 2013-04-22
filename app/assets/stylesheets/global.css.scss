@@ -11,8 +11,10 @@ html{
   color: #777;
 }
 
+$light-color-on-dark: #444;
+
 a {
-  color: #777;
+  color: $light-color-on-dark;
   &:hover {
     background: none;
     color: #000;
@@ -39,6 +41,9 @@ $red: red;
 
 $gray-dark: #333;
 $gray-light: #ccc;
+$background: rgba(237, 155, 88, 0.9);
+$accent: #444;
+
 
 #nav {
   border-top: 1px solid $gray-light;
@@ -46,12 +51,12 @@ $gray-light: #ccc;
   top: 0;
   height: 16px;
   background: #FFF;
-  background: rgba(255, 218, 185, 0.9);
-  border-bottom: 1px solid #FFBC80;
+  background: $background;
+  border-bottom: 1px solid $accent;
   width: 100%;
   padding: 15px;
   font-size: 15px;
-  color: #777;
+  color: $light-color-on-dark;
   z-index: 100;
 
   .cursive {
@@ -62,6 +67,7 @@ $gray-light: #ccc;
     text-decoration: none;
     padding: 5px 10px;
     &:visited {
+      color: $light-color-on-dark;
     }
     &:hover {
       background: none;
@@ -84,8 +90,8 @@ $gray-light: #ccc;
 
   #content {
     background: #CCC;
-    background: rgba(255, 218, 185, 0.9);
-    border: 1px solid #FFBC80;
+    background: $background;
+    border: 1px solid $accent;
     padding: 20px 10px 40px 10px;
     width: 500px;
     overflow: auto;

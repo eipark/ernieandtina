@@ -35,8 +35,27 @@ html {
 }
 
 form#rsvp-form {
-  margin-top: 35px;
+  margin-top: 25px;
   padding: 10px;
 }
 
+.food {
+  display: none;
+}
 
+#po {
+  padding-top: 15px;
+#  border-top: 1px solid #000;
+}
+
+#bottom-form {
+  padding-top: 15px;
+  border-top: 1px solid #333;
+}
+
+h2.name {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  color: #333;
+}

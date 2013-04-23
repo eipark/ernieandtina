@@ -23,6 +23,7 @@ a {
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Georgia';
 }
 
 $red: red;
@@ -41,20 +42,19 @@ $red: red;
 
 $gray-dark: #333;
 $gray-light: #ccc;
-$background: rgba(237, 155, 88, 0.9);
-$accent: #444;
+$background: rgba(255, 154, 122, 0.85);
+$accent: #555;
 
 
 #nav {
-  border-top: 1px solid $gray-light;
   position: fixed;
   top: 0;
-  height: 16px;
+  height: 15px;
   background: #FFF;
   background: $background;
   border-bottom: 1px solid $accent;
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   font-size: 15px;
   color: $light-color-on-dark;
   z-index: 100;

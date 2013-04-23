@@ -6,7 +6,6 @@ Ernieandtina::Application.routes.draw do
 
 
   #root :to => "application#home"
-  root :to => redirect("/savethedate")
   match 'home' => "application#home"
   match 'story' => "application#story"
   match 'guestbook' => "guests#guestbook"
@@ -17,8 +16,8 @@ Ernieandtina::Application.routes.draw do
   match 'registry' => "application#registry"
   match 'address' => redirect("https://docs.google.com/spreadsheet/embeddedform?formkey=dDlva1B0RmlsNzJrODFuZG53M2FrMEE6MQ")
   match 'savethedate' => "savethedate.html"
-  resources :users
 
+  root :to => "application#home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

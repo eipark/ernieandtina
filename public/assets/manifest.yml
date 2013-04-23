@@ -51,3 +51,5 @@ application.js: application-c39c8929e02335921e29f697c0ceff09.js
 application/index.js: application-c39c8929e02335921e29f697c0ceff09.js
 application.css: application-5123faa0f5118ef2962b3c9ceddb2e8c.css
 application/index.css: application-5123faa0f5118ef2962b3c9ceddb2e8c.css
+home.css: home-3a67340a8729785de3cfd109fc65577b.css
+home/index.css: home-3a67340a8729785de3cfd109fc65577b.css

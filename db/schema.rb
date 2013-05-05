@@ -11,22 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422011224) do
+ActiveRecord::Schema.define(:version => 20130430004917) do
 
   create_table "guests", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
     t.string   "address"
-    t.string   "rsvp_code"
+    t.string   "rsvp_code",         :limit => 5
     t.boolean  "rsvp"
-    t.string   "comment",         :limit => 2000
+    t.string   "comment",           :limit => 2000
     t.integer  "plus_one"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "food_choice"
-    t.string   "allergies",       :limit => 2000
-    t.string   "song_suggestion", :limit => 2000
+    t.string   "allergies",         :limit => 2000
+    t.string   "song_suggestion",   :limit => 2000
+    t.string   "custom_guest_text", :limit => 2000
+    t.string   "nick_name",         :limit => 2000
   end
 
   add_index "guests", ["rsvp_code"], :name => "index_guests_on_rsvp_code", :unique => true

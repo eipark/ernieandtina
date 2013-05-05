@@ -1,13 +1,18 @@
 <h1>RSVP</h1>
 
+<% if (!@guest.nick_name.empty?) %>
+  <% @name = @guest.nick_name %>
+<% else %>
+  <% @name = @guest.first_name %>
+<% end %>
 <% if @plus_one != nil %>
-  <% @plus_one_text = " and " + @plus_one.first_name %>
+  <% @plus_one_text = " and " + (@plus_one.nick_name.empty? ? @plus_one.first_name : @plus_one.nick_name) %>
 <% else %>
   <% @plus_one_text = "" %>
 <% end %>
 
 <p>
-  Hi <strong><%= @guest.first_name + @plus_one_text%></strong>! Please RSVP below by <strong>June 9</strong>. If you have any questions email us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
+  Hi <strong><%= @name + @plus_one_text%></strong>! Please RSVP below by <strong>June 9</strong>. If you have any questions email us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
 </p>
 
 <%= flash[:error] %>

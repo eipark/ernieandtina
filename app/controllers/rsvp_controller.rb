@@ -5,10 +5,13 @@ class RsvpController < ApplicationController
 
   def respond
     @rsvp_code = params[:rsvp_code]
+    @rsvp_code = @rsvp_code.downcase
 
     @guest = Guest.find_by_rsvp_code(@rsvp_code)
 
-    @plus_one = Guest.find_by_id(@guest.plus_one)
+    if @guest
+      @plus_one = Guest.find_by_id(@guest.plus_one)
+    end
 
     if @guest
       render :template => 'rsvp/respond'

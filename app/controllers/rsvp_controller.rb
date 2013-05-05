@@ -11,9 +11,6 @@ class RsvpController < ApplicationController
 
     if @guest
       @plus_one = Guest.find_by_id(@guest.plus_one)
-    end
-
-    if @guest
       render :template => 'rsvp/respond'
     else
       flash[:error] = "Incorrect RSVP Code. Try again."
@@ -22,20 +19,23 @@ class RsvpController < ApplicationController
 
   end
 
+
+  #how do you do proper error handling and redirects? yuck.
   def complete
     @rsvp_code = params[:rsvp_code]
     @guest = Guest.find_by_rsvp_code(@rsvp_code)
     @plus_one = Guest.find_by_id(@guest.plus_one)
-
+    isError = false
     if !@guest
+      isError = true
       flash[:error] = "Uh oh... something went wrong"
-      redirect_to :back
     end
 
     @attending = params[:attending]
     if @attending == nil
       flash[:error] = "Please select whether you will be attending or not."
-      redirect_to :back
+      isError = true
+#      redirect_to :back
     elsif @attending == "yes"
       @attending = true
     else
@@ -54,7 +54,9 @@ class RsvpController < ApplicationController
       @po_attending = params[:po_attending]
       if @po_attending == nil
         flash[:error] = "Please select whether you will be attending or not."
-        redirect_to :back
+        isError = true
+
+#        redirect_to :back
       elsif @po_attending == "yes"
         @po_attending = true
       else
@@ -69,8 +71,11 @@ class RsvpController < ApplicationController
 
     end
 
-    render :template => 'rsvp/complete'
+    if isError
+      render :template => 'rsvp/respond'
+    else
+      render :template => 'rsvp/complete'
+    end
   end
-
 
 end

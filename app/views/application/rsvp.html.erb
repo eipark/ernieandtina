@@ -1,5 +1,7 @@
 <h1>RSVP</h1>
+<p>
 Please enter the 5 character code on the back of your invitation.
+</p>
 <%= form_tag("/rsvp/respond") do  %>
   <%= text_field_tag "rsvp_code", nil, :size=>5 %>
   <%= submit_tag "Continue" %>

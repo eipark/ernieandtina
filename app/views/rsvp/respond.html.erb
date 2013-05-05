@@ -15,7 +15,9 @@
   Hi <strong><%= @name + @plus_one_text%></strong>! Please RSVP below by <strong>June 9</strong>. If you have any questions email us at <a href="mailto:erniepark.tinahsu@gmail.com">erniepark.tinahsu@gmail.com</a>.
 </p>
 
+<div class="error">
 <%= flash[:error] %>
+</div>
 <%= flash[:notice] %>
 <%= form_tag("/rsvp/complete", :id => "rsvp-form") do  %>
   <%= hidden_field_tag(:rsvp_code, @guest.rsvp_code) %>
@@ -26,14 +28,22 @@
     <% if @plus_one == nil %>
       <div class="label">Will you be attending?</div>
     <% else %>
-      <div class="label">Will <%= @guest.first_name%> be attending?</div>
+      <div class="label">Will <%= @guest.first_name + " " + @guest.last_name %> be attending?</div>
     <% end %>
     <div>
-      <%= radio_button_tag(:attending, "yes") %>
+      <% if @guest.rsvp == true %>
+        <%= radio_button_tag(:attending, "yes", true) %>
+      <% else %>
+        <%= radio_button_tag(:attending, "yes") %>
+      <% end %>
       <%= label_tag(:attending_yes, "Yes") %>
     </div>
     <div>
-      <%= radio_button_tag(:attending, "no", true) %>
+      <% if @guest.rsvp == false %>
+        <%= radio_button_tag(:attending, "no", true) %>
+      <% else %>
+        <%= radio_button_tag(:attending, "no") %>
+      <% end %>
       <%= label_tag(:attending_no, "No") %>
     </div>
   </div>
@@ -57,13 +67,21 @@
   <div id="po">
     <h2 class="name"><%= @plus_one.first_name + " " + @plus_one.last_name %></h2>
     <div id="po-rsvp" class="rsvp-radios">
-      <div class="label">Will <%= @plus_one.first_name%> be attending?</div>
+      <div class="label">Will <%= @plus_one.first_name + " " + @plus_one.last_name %> be attending?</div>
       <div>
-        <%= radio_button_tag(:po_attending, "yes") %>
+        <% if @plus_one.rsvp == true %>
+          <%= radio_button_tag(:po_attending, "yes", true) %>
+        <% else %>
+          <%= radio_button_tag(:po_attending, "yes") %>
+        <% end %>
         <%= label_tag(:po_attending_yes, "Yes") %>
       </div>
       <div>
-        <%= radio_button_tag(:po_attending, "no", true) %>
+        <% if @plus_one.rsvp == false %>
+          <%= radio_button_tag(:po_attending, "no", true) %>
+        <% else %>
+          <%= radio_button_tag(:po_attending, "no") %>
+        <% end %>
         <%= label_tag(:po_attending_no, "No") %>
       </div>
     </div>

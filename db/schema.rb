@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(:version => 20130430004917) do
 
+  create_table "deleteme", :id => false, :force => true do |t|
+    t.integer "id",   :limit => 8, :null => false
+    t.string  "name"
+  end
+
   create_table "guests", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"

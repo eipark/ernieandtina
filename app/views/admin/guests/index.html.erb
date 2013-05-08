@@ -1,0 +1,41 @@
+<style>
+  table {
+    border: 1px solid #999;
+    border-collapse: collapse;
+  }
+  table td {
+    border: 1px solid #999;
+    padding: 4px;
+  }
+</style>
+<table>
+  <tr>
+    <td>id</td>
+    <td>first_name </td>
+    <td>name </td>
+    <td>rsvp_code </td>
+    <td>rsvp </td>
+    <td>comment </td>
+    <td>food_choice </td>
+    <td>allergies </td>
+    <td>song_suggestion </td>
+    <td>plus_one </td>
+    <td>updated_at </td>
+  </tr>
+
+<% @admin_guests.each do |admin_guest| %>
+  <tr>
+    <td><%= admin_guest.id %></td>
+    <td><%= admin_guest.first_name %></td>
+    <td><%= admin_guest.last_name %></td>
+    <td><%= admin_guest.rsvp_code %></td>
+    <td><%= admin_guest.rsvp %></td>
+    <td><%= admin_guest.comment %></td>
+    <td><%= admin_guest.food_choice %></td>
+    <td><%= admin_guest.allergies %></td>
+    <td><%= admin_guest.song_suggestion %></td>
+    <td><%= admin_guest.plus_one %></td>
+    <td><%= admin_guest.updated_at %></td>
+<% end %>
+</table>
+

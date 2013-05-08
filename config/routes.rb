@@ -2,9 +2,6 @@ Ernieandtina::Application.routes.draw do
   post "rsvp/respond"
   post "rsvp/complete"
 
-#  resources :guests
-
-
   #root :to => "application#home"
   match 'home' => "application#home"
   match 'story' => "application#story"
@@ -18,6 +15,11 @@ Ernieandtina::Application.routes.draw do
   match 'savethedate' => "savethedate.html"
 
   root :to => "application#home"
+
+  namespace :admin do
+    resources :guests
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -49,7 +49,9 @@ snow.jpg: snow-d1c59962c50bd0989e573260f1816b8e.jpg
 snow/index.jpg: snow-d1c59962c50bd0989e573260f1816b8e.jpg
 application.js: application-c39c8929e02335921e29f697c0ceff09.js
 application/index.js: application-c39c8929e02335921e29f697c0ceff09.js
-application.css: application-5123faa0f5118ef2962b3c9ceddb2e8c.css
-application/index.css: application-5123faa0f5118ef2962b3c9ceddb2e8c.css
+application.css: application-5c028d47cff771f0148823c404cceaf1.css
+application/index.css: application-5c028d47cff771f0148823c404cceaf1.css
+global.css: global-bb3c409fbf0301ff0e76e362e1dd205e.css
+global/index.css: global-bb3c409fbf0301ff0e76e362e1dd205e.css
 home.css: home-3a67340a8729785de3cfd109fc65577b.css
 home/index.css: home-3a67340a8729785de3cfd109fc65577b.css
